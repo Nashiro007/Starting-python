@@ -2,13 +2,26 @@ foods = []
 prices = []
 quantities = []
 total = 0
-
+menu = {
+    "Burger": 5.99,
+    "Pizza": 8.50,
+    "Fries": 2.99,
+    "Hotdog": 3.50,
+    "Sandwich": 4.75,
+    "Taco": 2.50,
+    "Pasta": 7.25,
+    "Salad": 4.00,
+    "Ice Cream": 3.25,
+    "Soda": 1.50
+}
 while True:
+    for key, value in menu.items():
+        print(f"{key:10} : {value:.2f}$")
     food = input("Enter the food you want (q to quit) (r to remove): ")
     if food.lower() == "q":
         break
     elif food.lower() == "r":
-        remove = input("Enter the item you want to remove: ")
+        remove = input("Enter the item you want to remove")
         if remove in foods:
             index = foods.index(remove)
             foods.pop(index)
@@ -18,7 +31,7 @@ while True:
         else:
             print(f"{remove} was not found in your cart")
     else:
-        price = float(input(f"Enter the price of {food}: "))
+        price = menu[food]
         quantity = int(input(f"Enter the amount of {food}: "))
         foods.append(food)
         prices.append(price * quantity)
