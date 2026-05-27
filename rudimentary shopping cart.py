@@ -8,7 +8,7 @@ while True:
     if food.lower() == "q":
         break
     elif food.lower() == "r":
-        remove = input("Enter the item you want to remove")
+        remove = input("Enter the item you want to remove: ")
         if remove in foods:
             index = foods.index(remove)
             foods.pop(index)
